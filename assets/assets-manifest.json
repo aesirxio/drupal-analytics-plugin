@@ -23,7 +23,7 @@
   "bf.svg": "images/flags/bb616c9ec60cde6806bb.svg",
   "bg.svg": "images/flags/0717abbc6df210a43c5d.svg",
   "bh.svg": "images/flags/d6e3bed59974f2b0aedd.svg",
-  "bi.js": "bi/733589c03106d72919b3.js",
+  "bi.js": "bi/a6daf64dc01ea484d248.js",
   "bi.svg": "images/flags/2bea8a3a0c6787094c56.svg",
   "bi/01abcc6df2a8d26e73ba.js": "bi/01abcc6df2a8d26e73ba.js",
   "bi/178206557aff04f35da3.js": "bi/178206557aff04f35da3.js",
@@ -40,6 +40,7 @@
   "bi/6321450e04fb304f12da.js": "bi/6321450e04fb304f12da.js",
   "bi/6f7b2abe793be603acd5.js": "bi/6f7b2abe793be603acd5.js",
   "bi/78f732591f2f7f41eda4.js": "bi/78f732591f2f7f41eda4.js",
+  "bi/795c94e6c12d606b3d11.js": "bi/795c94e6c12d606b3d11.js",
   "bi/7c0a13397f3ddcb06296.js": "bi/7c0a13397f3ddcb06296.js",
   "bi/7e11763a699d3a7ddf6e.js": "bi/7e11763a699d3a7ddf6e.js",
   "bi/853e1a819e8eae427634.js": "bi/853e1a819e8eae427634.js",
@@ -54,7 +55,6 @@
   "bi/c5ca2071920bd8ae5f0c.js": "bi/c5ca2071920bd8ae5f0c.js",
   "bi/de7ef274fb5e3d029397.js": "bi/de7ef274fb5e3d029397.js",
   "bi/ea75301b9736915c6325.js": "bi/ea75301b9736915c6325.js",
-  "bi/ee0ff0ebfc3fb66eeffe.js": "bi/ee0ff0ebfc3fb66eeffe.js",
   "bi/ee673bdddc2689ee5938.js": "bi/ee673bdddc2689ee5938.js",
   "bi/f5dcb87d27f0ddc569dc.js": "bi/f5dcb87d27f0ddc569dc.js",
   "bi/f622f42dea0551df9b7c.js": "bi/f622f42dea0551df9b7c.js",
@@ -83,7 +83,7 @@
   "cm.svg": "images/flags/b09bb372e446f5ca1acc.svg",
   "cn.svg": "images/flags/890ef6a654b865eea033.svg",
   "co.svg": "images/flags/2035da4efa474be5bb4b.svg",
-  "config.js": "bi/4a163affc56dedd0a0af.js",
+  "config.js": "bi/daaec3f46358d7d550d6.js",
   "cp.svg": "images/flags/07dab79812c8de77ad74.svg",
   "cr.svg": "images/flags/96cca3298724eeac307f.svg",
   "cu.svg": "images/flags/ca9650f172c0b6b37672.svg",
@@ -108,15 +108,15 @@
     "config": {
       "assets": {
         "js": [
-          "bi/4a163affc56dedd0a0af.js"
+          "bi/daaec3f46358d7d550d6.js"
         ]
       }
     },
     "bi": {
       "assets": {
         "js": [
-          "bi/ee0ff0ebfc3fb66eeffe.js",
-          "bi/733589c03106d72919b3.js"
+          "bi/795c94e6c12d606b3d11.js",
+          "bi/a6daf64dc01ea484d248.js"
         ]
       }
     }
