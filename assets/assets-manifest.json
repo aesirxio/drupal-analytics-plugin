@@ -23,7 +23,7 @@
   "bf.svg": "images/flags/bb616c9ec60cde6806bb.svg",
   "bg.svg": "images/flags/0717abbc6df210a43c5d.svg",
   "bh.svg": "images/flags/d6e3bed59974f2b0aedd.svg",
-  "bi.js": "bi/733589c03106d72919b3.js",
+  "bi.js": "bi/98f46bf40eb138464636.js",
   "bi.svg": "images/flags/2bea8a3a0c6787094c56.svg",
   "bi/01abcc6df2a8d26e73ba.js": "bi/01abcc6df2a8d26e73ba.js",
   "bi/178206557aff04f35da3.js": "bi/178206557aff04f35da3.js",
@@ -54,10 +54,10 @@
   "bi/c5ca2071920bd8ae5f0c.js": "bi/c5ca2071920bd8ae5f0c.js",
   "bi/de7ef274fb5e3d029397.js": "bi/de7ef274fb5e3d029397.js",
   "bi/ea75301b9736915c6325.js": "bi/ea75301b9736915c6325.js",
-  "bi/ee0ff0ebfc3fb66eeffe.js": "bi/ee0ff0ebfc3fb66eeffe.js",
   "bi/ee673bdddc2689ee5938.js": "bi/ee673bdddc2689ee5938.js",
   "bi/f5dcb87d27f0ddc569dc.js": "bi/f5dcb87d27f0ddc569dc.js",
   "bi/f622f42dea0551df9b7c.js": "bi/f622f42dea0551df9b7c.js",
+  "bi/febd04f239b6169789f2.js": "bi/febd04f239b6169789f2.js",
   "bj.svg": "images/flags/6751458913a414dcbb15.svg",
   "bm.svg": "images/flags/6332d36a113b7b30a72f.svg",
   "bn.svg": "images/flags/91c0cc951477ac7e6db3.svg",
@@ -83,7 +83,7 @@
   "cm.svg": "images/flags/b09bb372e446f5ca1acc.svg",
   "cn.svg": "images/flags/890ef6a654b865eea033.svg",
   "co.svg": "images/flags/2035da4efa474be5bb4b.svg",
-  "config.js": "bi/4a163affc56dedd0a0af.js",
+  "config.js": "bi/daaec3f46358d7d550d6.js",
   "cp.svg": "images/flags/07dab79812c8de77ad74.svg",
   "cr.svg": "images/flags/96cca3298724eeac307f.svg",
   "cu.svg": "images/flags/ca9650f172c0b6b37672.svg",
@@ -108,15 +108,15 @@
     "config": {
       "assets": {
         "js": [
-          "bi/4a163affc56dedd0a0af.js"
+          "bi/daaec3f46358d7d550d6.js"
         ]
       }
     },
     "bi": {
       "assets": {
         "js": [
-          "bi/ee0ff0ebfc3fb66eeffe.js",
-          "bi/733589c03106d72919b3.js"
+          "bi/febd04f239b6169789f2.js",
+          "bi/98f46bf40eb138464636.js"
         ]
       }
     }
