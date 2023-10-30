@@ -6,6 +6,7 @@
   window.env.REACT_APP_DATA_STREAM = JSON.stringify({{ content.data_stream|raw }});
   window.env.PUBLIC_URL="{{ content.public_url }}";
   window.env.STORAGE="{{ content.1st_party_server }}";
+  window.env.REACT_APP_HEADER_JWT=true;
 </script>
 {{ attach_library('aesirx_analytics/aesirx_analytics.bi') }}
 <div id="biapp" class="aesirxui"></div>
