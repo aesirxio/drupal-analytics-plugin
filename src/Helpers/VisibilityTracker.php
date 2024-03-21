@@ -38,15 +38,15 @@ class VisibilityTracker {
   /**
    * Constructor.
    *
-   * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
+   * @param \Drupal\Core\Config\ConfigFactoryInterface $configFactory
    *   The config factory service.
    * @param \Drupal\path_alias\AliasManagerInterface   $alias_manager
    *   The alias manager service.
    * @param \Drupal\Core\Path\PathMatcherInterface     $path_matcher
    *   The path matcher service.
    */
-  public function __construct(ConfigFactoryInterface $config_factory, AliasManagerInterface $alias_manager, PathMatcherInterface $path_matcher, CurrentPathStack $current_path) {
-    $this->config = $config_factory->get(AesirxAnalyticsAdminConfigForm::SETTINGS);
+  public function __construct(ConfigFactoryInterface $configFactory, AliasManagerInterface $alias_manager, PathMatcherInterface $path_matcher, CurrentPathStack $current_path) {
+    $this->config = $configFactory->get(AesirxAnalyticsAdminConfigForm::SETTINGS);
     $this->aliasManager = $alias_manager;
     $this->pathMatcher = $path_matcher;
     $this->currentPath = $current_path;

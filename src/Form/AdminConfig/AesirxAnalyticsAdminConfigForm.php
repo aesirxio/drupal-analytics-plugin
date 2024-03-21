@@ -19,9 +19,9 @@ class AesirxAnalyticsAdminConfigForm extends ConfigFormBase
 
     private AesirxAnalyticsCli $cli;
 
-    public function __construct(ConfigFactoryInterface $config_factory, AesirxAnalyticsCli $cli)
+    public function __construct(ConfigFactoryInterface $configFactory, AesirxAnalyticsCli $cli)
     {
-        parent::__construct($config_factory);
+        parent::__construct($configFactory);
         $this->cli = $cli;
     }
 
