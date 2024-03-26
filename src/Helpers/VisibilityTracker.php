@@ -9,47 +9,60 @@ use Drupal\Core\Path\PathMatcherInterface;
 use Drupal\path_alias\AliasManagerInterface;
 
 /**
- * Defines the Path Matcher class.
+ * Defines the Visibilaty Tracker class.
  */
 class VisibilityTracker {
 
   /**
+   * Prite variable aliasManager.
+   *
    * @var \Drupal\path_alias\AliasManagerInterface
    */
   private $aliasManager;
 
   /**
+   * Private variable pathMatcher.
+   *
    * @var \Drupal\Core\Path\PathMatcherInterface
    */
   private $pathMatcher;
 
   /**
+   * Private variable config.
+   *
    * @var \Drupal\Core\Config\ImmutableConfig
    */
   private $config;
 
   /**
+   * Private variable currentPath.
+   *
    * @var \Drupal\Core\Path\CurrentPathStack
    */
   private $currentPath;
 
-  private ?bool $pageMatch = NULL;
+  /**
+   * Private variable pageMatch.
+   */
+  private ? bool $pageMatch = NULL;
 
   /**
    * Constructor.
    *
    * @param \Drupal\Core\Config\ConfigFactoryInterface $configFactory
    *   The config factory service.
-   * @param \Drupal\path_alias\AliasManagerInterface   $alias_manager
+   * @param \Drupal\path_alias\AliasManagerInterface $aliasManager
    *   The alias manager service.
-   * @param \Drupal\Core\Path\PathMatcherInterface     $path_matcher
+   * @param \Drupal\Core\Path\PathMatcherInterface $pathMatcher
    *   The path matcher service.
+   * @param \Drupal\Core\Path\CurrentPathStack $currentPath
+   *   The current path service.
    */
-  public function __construct(ConfigFactoryInterface $configFactory, AliasManagerInterface $alias_manager, PathMatcherInterface $path_matcher, CurrentPathStack $current_path) {
+  public function __construct(ConfigFactoryInterface $configFactory, AliasManagerInterface $aliasManager, PathMatcherInterface $pathMatcher, CurrentPathStack $currentPath) {
     $this->config = $configFactory->get(AesirxAnalyticsAdminConfigForm::SETTINGS);
-    $this->aliasManager = $alias_manager;
-    $this->pathMatcher = $path_matcher;
-    $this->currentPath = $current_path;
+    $this->aliasManager = $aliasManager;
+    $this->pathMatcher = $pathMatcher;
+    $this->currentPath = $currentPath;
   }
 
   /**
@@ -60,19 +73,17 @@ class VisibilityTracker {
    */
   public function getVisibilityPages(): bool {
     // Cache visibility result if function is called more than once.
-    if (is_null($this->pageMatch))
-    {
+    if (is_null($this->pageMatch)) {
       $visibility_request_path_mode = $this->config->get('visibility.request_path_mode');
       $visibility_request_path_pages = $this->config->get('visibility.request_path_pages');
 
       // Match path if necessary.
-      if (!empty($visibility_request_path_pages))
-      {
+      if (!empty($visibility_request_path_pages)) {
         // Convert path to lowercase. This allows comparison of the same path
         // with different case. Ex: /Page, /page, /PAGE.
         $pages = mb_strtolower($visibility_request_path_pages);
-        if ($visibility_request_path_mode < 2)
-        {
+
+        if ($visibility_request_path_mode < 2) {
           // Compare the lowercase path alias (if any) and internal path.
           $path = $this->currentPath->getPath();
           $path_alias = mb_strtolower($this->aliasManager->getAliasByPath($path));
@@ -82,13 +93,11 @@ class VisibilityTracker {
           // set to 1, it is displayed only on those pages listed in $pages.
           $this->pageMatch = !($visibility_request_path_mode xor $this->pageMatch);
         }
-        else
-        {
+        else {
           $this->pageMatch = FALSE;
         }
       }
-      else
-      {
+      else {
         $this->pageMatch = TRUE;
       }
     }
@@ -124,10 +133,12 @@ class VisibilityTracker {
       }
     }
     else {
-      // No role is selected for tracking, therefore all roles should be tracked.
+      // No role is selected for tracking, therefore all
+      // roles should be tracked.
       $enabled = TRUE;
     }
 
     return $enabled;
   }
+
 }

@@ -14,7 +14,7 @@ namespace Drupal\aesirx_analytics;
 use AesirxAnalyticsLib\Cli\Env;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Database\Database;
-use RuntimeException;
+use Symfony\Component\Console\Exception\RuntimeException;
 
 /**
  * Impelents CLI Env Factory.
@@ -25,6 +25,13 @@ class CliEnvFactory {
 
   /**
    * Implements function getEnv().
+   *
+   * @param \Drupal\Core\Config\ConfigFactoryInterface $configFactory
+   *   The config factory service.
+   * @param string $connection_key
+   *   The Connection Key variable.
+   * @param string $connection_target
+   *   The Connection traget variable.
    */
   public static function getEnv(
         ConfigFactoryInterface $configFactory,
