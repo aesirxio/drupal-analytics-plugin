@@ -3,10 +3,45 @@
 Drupal plugin for tracking and storing the tracking data in the 1st party 
 Aesirx Analytics server.
 
-## Setup of the Drupal analytics on the site
+## Requirements 
 
-Please check the instruction manual on `https://analytics.aesirx.io/install-guide/drupal`
+This module requires no modules outside of Drupal core.
 
+## Installation
+
+If your site is managed via Composer, use Composer to download the
+aesirx_analytics module running composer require aesirx/aesirx_analytic.
+
+Otherwise, copy/upload the aesirx_analytics module to the modules/custom
+directory of your Drupal installation.
+
+For further information check the instruction manual on
+`https://analytics.aesirx.io/install-guide/drupal`
+
+## Configuration
+
+Go to Configuration (/admin/config) and find the Aesirx Analytics under the
+Webservice for editing (/admin/config/services/aesirx_analytics).
+
+Edit the configuration for your requirements.
+
+First, you will need to select if you are going to use Internal or External
+1stParty server.
+
+- Internal - there will be a prompt to install the CLI Library which is
+necessary to have it all internal. Also, you will need to add the Licence Key
+for Aesirx Analytics and CLIENT_ID and CLIENT_SECRET from
+`https://dapp.shield.aesirx.io/licenses`. 
+- External - You will need to add the URL of your external 1stParty server and
+enter the CLIENT_ID and CLIENT_SECRET from `https://dapp.shield.aesirx.io/licenses`.
+
+The Consent checkbox is for the Consent pop-up on the frontpage and
+Shield of Privacy option.
+
+At the end of the configuration are Drupal specific options for
+tracking or removing tracking for specific pages and roles.
+
+Save the configuration.
 
 ## For local setup of the plugin
 
