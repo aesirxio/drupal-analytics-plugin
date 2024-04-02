@@ -28,7 +28,7 @@ function aesirx_analytics_page_attachments(array &$page): void {
   }
 
   $domain =
-   ($conf->get('settings.1st_party_server') ?? 'internal') == 'internal' ? \Drupal::request()->getSchemeAndHttpHost() : rtrim($conf->get('settings.domain') ?? '', '/');
+   ($conf->get('settings.first_party_server') ?? 'internal') == 'internal' ? \Drupal::request()->getSchemeAndHttpHost() : rtrim($conf->get('settings.domain') ?? '', '/');
   $consent =
    ($conf->get('settings.consent') ?? 'false') == 'true' ? 'false' : 'true';
 
@@ -117,7 +117,7 @@ function aesirx_analytics_cron() {
  */
 function aesirx_analytics_config_is_ok(string $isStorage = NULL): bool {
   $conf = \Drupal::config(AesirxAnalyticsAdminConfigForm::SETTINGS);
-  $storage = $conf->get('settings.1st_party_server');
+  $storage = $conf->get('settings.first_party_server');
   $res = (!empty($storage)
     && (
       ($storage == 'internal' && !empty($conf->get('settings.license')) && \Drupal::service('aesirx_analytics.cli')
