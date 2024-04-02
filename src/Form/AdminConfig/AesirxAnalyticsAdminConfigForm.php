@@ -86,10 +86,10 @@ class AesirxAnalyticsAdminConfigForm extends ConfigFormBase {
       ),
     ];
 
-    $form['1st_party_server'] = [
+    $form['first_party_server'] = [
       '#type' => 'radios',
       '#title' => $this->t('1st party server'),
-      '#default_value' => $settings['1st_party_server'],
+      '#default_value' => $settings['first_party_server'],
       '#options' => [
         AesirxAnalyticsInterface::INTERNAL => $this->t('Internal'),
         AesirxAnalyticsInterface::EXTERNAL => $this->t('External'),
@@ -105,7 +105,7 @@ class AesirxAnalyticsAdminConfigForm extends ConfigFormBase {
           '#markup' => '<b class="color-success">' . $this->t('CLI library check: Passed') . '</b>',
           '#states' => [
             'visible' => [
-              ':input[name="1st_party_server"]' => ['value' => AesirxAnalyticsInterface::INTERNAL],
+              ':input[name="first_party_server"]' => ['value' => AesirxAnalyticsInterface::INTERNAL],
             ],
           ],
         ];
@@ -119,7 +119,7 @@ class AesirxAnalyticsAdminConfigForm extends ConfigFormBase {
           ) . '</b>',
           '#states' => [
             'visible' => [
-              ':input[name="1st_party_server"]' => ['value' => AesirxAnalyticsInterface::INTERNAL],
+              ':input[name="first_party_server"]' => ['value' => AesirxAnalyticsInterface::INTERNAL],
             ],
           ],
         ];
@@ -136,7 +136,7 @@ class AesirxAnalyticsAdminConfigForm extends ConfigFormBase {
           '#submit' => [[$this, 'downloadCliButton']],
           '#states' => [
             'visible' => [
-              ':input[name="1st_party_server"]' => ['value' => AesirxAnalyticsInterface::INTERNAL],
+              ':input[name="first_party_server"]' => ['value' => AesirxAnalyticsInterface::INTERNAL],
             ],
           ],
         ];
@@ -150,7 +150,7 @@ class AesirxAnalyticsAdminConfigForm extends ConfigFormBase {
           ) . '</b>',
           '#states' => [
             'visible' => [
-              ':input[name="1st_party_server"]' => ['value' => AesirxAnalyticsInterface::INTERNAL],
+              ':input[name="first_party_server"]' => ['value' => AesirxAnalyticsInterface::INTERNAL],
             ],
           ],
         ];
@@ -175,10 +175,10 @@ class AesirxAnalyticsAdminConfigForm extends ConfigFormBase {
       '#default_value' => $settings['domain'],
       '#states' => [
         'visible' => [
-          ':input[name="1st_party_server"]' => ['value' => AesirxAnalyticsInterface::EXTERNAL],
+          ':input[name="first_party_server"]' => ['value' => AesirxAnalyticsInterface::EXTERNAL],
         ],
         'required' => [
-          ':input[name="1st_party_server"]' => ['value' => AesirxAnalyticsInterface::EXTERNAL],
+          ':input[name="first_party_server"]' => ['value' => AesirxAnalyticsInterface::EXTERNAL],
         ],
       ],
       '#element_validate' => [
@@ -210,10 +210,10 @@ class AesirxAnalyticsAdminConfigForm extends ConfigFormBase {
       '#default_value' => $settings['license'],
       '#states' => [
         'visible' => [
-          ':input[name="1st_party_server"]' => ['value' => AesirxAnalyticsInterface::INTERNAL],
+          ':input[name="first_party_server"]' => ['value' => AesirxAnalyticsInterface::INTERNAL],
         ],
         'required' => [
-          ':input[name="1st_party_server"]' => ['value' => AesirxAnalyticsInterface::INTERNAL],
+          ':input[name="first_party_server"]' => ['value' => AesirxAnalyticsInterface::INTERNAL],
         ],
       ],
       '#element_validate' => [[get_class($this), 'validateInternalIsRequired']],
@@ -409,7 +409,7 @@ class AesirxAnalyticsAdminConfigForm extends ConfigFormBase {
   public static function validateInternalIsRequired($element, FormStateInterface $form_state) {
     if (
       empty($element['#value']) && $form_state->getValue(
-        '1st_party_server'
+        'first_party_server'
       ) == AesirxAnalyticsInterface::INTERNAL
     ) {
       $form_state->setError($element, t('The "@name" can not be empty.', ['@name' => $element['#title']]));
@@ -430,7 +430,7 @@ class AesirxAnalyticsAdminConfigForm extends ConfigFormBase {
   public static function validateExternalIsRequired($element, FormStateInterface $form_state) {
     if (
       empty($element['#value']) && $form_state->getValue(
-       '1st_party_server'
+       'first_party_server'
       ) == AesirxAnalyticsInterface::EXTERNAL
     ) {
       $form_state->setError($element, t('The "@name" can not be empty.', ['@name' => $element['#title']]));

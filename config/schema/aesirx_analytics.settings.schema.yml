@@ -6,7 +6,7 @@ aesirx_analytics.settings:
       type: mapping
       label: 'aesirx analytics default settings'
       mapping:
-        1st_party_server:
+        first_party_server:
           type: string
           label: '1st party server'
         consent:

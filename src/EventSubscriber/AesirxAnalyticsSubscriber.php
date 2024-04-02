@@ -52,7 +52,7 @@ class AesirxAnalyticsSubscriber implements EventSubscriberInterface {
   public function onRequest(RequestEvent $event) {
     if (
       ($this->configFactory->get('aesirx_analytics.settings')
-        ->get('settings.1st_party_server') ?? 'internal') != 'internal'
+        ->get('settings.first_party_server') ?? 'internal') != 'internal'
     ) {
       return;
     }

@@ -61,7 +61,7 @@ class Dashboard extends ControllerBase {
       ],
     ];
     $endpoint =
-      ($conf->get('settings.1st_party_server') ?? 'internal') == 'internal'
+      ($conf->get('settings.first_party_server') ?? 'internal') == 'internal'
       ? $host
       : rtrim($conf->get('settings.domain') ?? '', '/');
 
