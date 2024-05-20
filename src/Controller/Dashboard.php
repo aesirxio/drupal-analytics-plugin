@@ -64,13 +64,18 @@ class Dashboard extends ControllerBase {
       ($conf->get('settings.first_party_server') ?? 'internal') == 'internal'
       ? $host
       : rtrim($conf->get('settings.domain') ?? '', '/');
-
+    $clientId=$conf->get('settings.client_id');
+    $clientSecret=$conf->get('settings.client_secret');
+    $firstPartyServer=$conf->get('settings.first_party_server');
     return [
       '#theme' => 'bi-dashboard',
       '#content' => [
         'endpoint_url' => $endpoint,
         'data_stream' => json_encode($streams),
         'public_url' => $host . '/' . $this->modulePath,
+        'client_id' => $clientId,
+        'client_secret' => $clientSecret,
+        'first_party_server' => $firstPartyServer,
       ],
     ];
   }
