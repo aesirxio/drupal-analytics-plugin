@@ -195,14 +195,34 @@ class AesirxAnalyticsAdminConfigForm extends ConfigFormBase {
       '#type' => 'textfield',
       '#title' => $this->t('Client ID'),
       '#default_value' => $settings['client_id'],
-      '#required' => TRUE,
+      '#states' => [
+        'visible' => [
+          ':input[name="first_party_server"]' => ['value' => AesirxAnalyticsInterface::EXTERNAL],
+        ],
+        'required' => [
+          ':input[name="first_party_server"]' => ['value' => AesirxAnalyticsInterface::EXTERNAL],
+        ],
+      ],
+      '#element_validate' => [[get_class($this), 'validateInternalIsRequired']],
     ];
 
     $form['client_secret'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Client Secret'),
       '#default_value' => $settings['client_secret'],
-      '#required' => TRUE,
+      '#states' => [
+        'visible' => [
+          ':input[name="first_party_server"]' => ['value' => AesirxAnalyticsInterface::EXTERNAL],
+        ],
+        'required' => [
+          ':input[name="first_party_server"]' => ['value' => AesirxAnalyticsInterface::EXTERNAL],
+        ],
+      ],
+      '#element_validate' => [[get_class($this), 'validateInternalIsRequired']],
+      '#description' => $this->t(
+        "<p class= 'description'>
+       Register to AesirX and get your Client ID and Client Secret here: <a target='_blank' href='https://dapp.shield.aesirx.io/licenses'>https://dapp.shield.aesirx.io/licenses</a>.</p>"
+     ),
     ];
     $form['license'] = [
       '#type' => 'textfield',
@@ -219,7 +239,7 @@ class AesirxAnalyticsAdminConfigForm extends ConfigFormBase {
       '#element_validate' => [[get_class($this), 'validateInternalIsRequired']],
       '#description' => $this->t(
          "<p class= 'description'>
-        Register to AesirX and get your client id, client secret and license here: <a target='_blank' href='https://web3id.aesirx.io'>https://web3id.aesirx.io</a>.</p>"
+        Register to AesirX and get your license here: <a target='_blank' href='https://dapp.shield.aesirx.io/licenses'>https://dapp.shield.aesirx.io/licenses/</a>.</p>"
       ),
     ];
 
